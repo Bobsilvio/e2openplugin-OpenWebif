@@ -694,10 +694,10 @@ def setPowerTimer(session, request):
 	timertype = 0
 	if "timertype" in list(request.args.keys()) and request.args["timertype"][0] in ["0", "1", "2", "3", "4", "5", "6", "7", "8"]:
 		timertype = int(request.args["timertype"][0])
-	begin = int(time() + 60)
+	begin = time() + 60
 	if "begin" in list(request.args.keys()):
 		begin = int(request.args["begin"][0])
-	end = int(time() + 120)
+	end = time() + 120
 	if "end" in list(request.args.keys()):
 		end = int(request.args["end"][0])
 	disabled = 0
